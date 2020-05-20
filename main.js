@@ -8,11 +8,13 @@ $.ajax({
   'method': 'get',
   'success': function(data) {
     var cdArray = data.response;
-    console.log(cdArray);
     for (var i = 0; i < cdArray.length; i++) {
       var currentObject = cdArray[i];
+      var currentGenre = currentObject.genre.toLowerCase();
+      currentObject.genre = currentGenre;
       var html = template(currentObject);
       $('.cds-container').append(html);
+
     }
   },
   'error': function() {
@@ -20,28 +22,17 @@ $.ajax({
   },
 })
 
-$('option[value=jazz]').click(function() {
-  $('.cd').hide();
-  $('.cd[data-genre=Jazz]').show();
+var genre = $('.option').attr('value');
+
+$('option').click(function() {
+  var genre = $(this).attr('value');
+  if (genre == 'all') {
+    $('.cd').show();
+  } else {
+    $('.cd').hide();
+    $('.cd[data-genre='+genre+']').show();
+  }
 });
 
-$('option[value=pop]').click(function() {
-  $('.cd').hide();
-  $('.cd[data-genre=Pop]').show();
-});
-
-$('option[value=metal]').click(function() {
-  $('.cd').hide();
-  $('.cd[data-genre=Metal]').show();
-});
-
-$('option[value=rock]').click(function() {
-  $('.cd').hide();
-  $('.cd[data-genre=Rock]').show();
-});
-
-$('option[value=all]').click(function() {
-  $('.cd').show();
-});
 
 });/*DNT - closing doc.ready*/
