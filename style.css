@@ -31,7 +31,7 @@ header img {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 100px 0;
+    padding: 70px 0;
 }
 
 .cd {
@@ -47,11 +47,9 @@ header img {
     text-align: center;
 }
 
-.cd img {
-    max-width: 100%;
-}
 
 .cd h3 {
+    height: 80px;
     margin: 20px 0;
     color: white;
     font-size: 22px;
@@ -65,4 +63,19 @@ header img {
 
 .cd span.year {
     color: grey;
+}
+
+.imgbox {
+  width: 160px;
+  height: 160px;
+}
+
+.imgbox img {
+    max-width: 100%;
+}
+
+.select-container {
+  padding-top: 30px;
+  width: 55px;
+  margin: auto;
 }

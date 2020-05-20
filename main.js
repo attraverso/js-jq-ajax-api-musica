@@ -34,5 +34,4 @@ $('option').click(function() {
   }
 });
 
-
 });/*DNT - closing doc.ready*/
